@@ -1,0 +1,25 @@
+<mat-toolbar color="primary">
+    <!-- Left: Title -->
+    <span class="flex bold">Bookmarker</span>
+  
+    <!-- Middle: Search Icon and Input -->
+    <mat-icon class="mt-minus-5">search</mat-icon>
+    <mat-form-field class="example-form-field mt-5">
+      <input matInput [(ngModel)]="value" class="search-input" placeholder="Filter bookmarks...">
+      @if (value) {
+        <button matSuffix mat-icon-button (click)="value=''">
+          <mat-icon class="white">close</mat-icon>
+        </button>
+      }
+    </mat-form-field>
+  
+    <!-- Right: Plus Icon -->
+    <span class="flex text-align-right">
+      <button mat-icon-button (click)="toggleForm()">
+        <mat-icon class="white" [matTooltip]="isAddEditVisible ? 'Go back' : 'Add bookmark'">
+          {{ isAddEditVisible ? 'arrow_back' : 'add' }}
+        </mat-icon>
+      </button>
+    </span>
+  </mat-toolbar>
+  

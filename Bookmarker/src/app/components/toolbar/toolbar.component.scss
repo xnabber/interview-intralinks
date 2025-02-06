@@ -1,0 +1,23 @@
+  /* Change the placeholder text color to white */
+  .search-input {
+    color: white !important;
+    opacity: 1; /* Ensures placeholder text is visible */
+    font-size: 25px !important;
+  }
+
+  .search-input::placeholder {
+    color: white !important;
+    opacity: 1; /* Ensures placeholder text is visible */
+    font-size: 25px !important;
+  }
+
+
+
+
+  .example-form-field {
+      width: 250px;
+      height: 75px;
+    }
+    
+    
+  

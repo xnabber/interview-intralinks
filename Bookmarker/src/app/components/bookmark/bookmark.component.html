@@ -1,0 +1,27 @@
+
+    <div class="display-flex align-items-center mt-20 w-700">
+        <mat-icon class="gray flex w-5-p">bookmark</mat-icon>
+    
+        <div class="display-flex flex-direction-column w-90-p">
+            <span>{{ bookmark.title }}</span>
+            <span><a [href]="bookmark.url" target="_blank">{{ bookmark.url }}</a></span>
+        </div>
+    
+        <div class="w-5-p">
+            <button mat-icon-button [matMenuTriggerFor]="menu">
+                <mat-icon class="gray flex">edit</mat-icon>
+            </button>
+            <mat-menu [overlapTrigger]="false" yPosition="above" #menu="matMenu">
+                <button mat-menu-item (click)="editBookmark(bookmark)">
+                  <mat-icon>quiz</mat-icon>
+                  <span>Edit</span>
+                </button>
+                <button mat-menu-item (click)="openDialog()">
+                  <mat-icon>delete</mat-icon>
+                  <span>Delete</span>
+                </button>
+              </mat-menu>
+        </div>
+    </div>
+
+

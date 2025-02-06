@@ -1,0 +1,118 @@
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-line-ripple::before{
+    border-bottom: 1px solid rgb(255, 255, 255) !important;
+  }
+
+  .mdc-line-ripple::after{
+    border-bottom: 3px solid white !important;
+  }
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled){
+    background: none !important;
+  }
+
+  .toolbar .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-line-ripple::before {
+    border-bottom: 1px solid rgb(255, 255, 255) !important;
+  }
+  
+  .toolbar .mdc-line-ripple::after {
+    border-bottom: 3px solid white !important;
+  }
+
+.flex{
+    flex: 1;
+}
+
+.text-align-right{
+    text-align: right;
+}
+
+.text-align-left{
+    text-align: left;
+}
+
+.bold{
+    font-weight: 500;
+}
+
+.mt-5{
+    margin-top: 5px;
+}
+
+.mt-20{
+    margin-top: 20px;
+}
+
+.mt-minus-5{
+    margin-top: -5px;
+}
+
+.white{
+    color:white;
+}
+
+.gray{
+    color:rgb(65, 65, 65)
+}
+
+.display-flex{
+    display: flex;
+}
+
+.flex-direction-column{
+    flex-direction: column;
+}
+
+.w-60-p{
+    width: 60%;
+}
+
+.w-5-p{
+    width: 5% !important;
+}
+
+.w-90-p{
+    width: 90%;
+}
+
+.align-items-center{
+    align-items: center;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+.w-700{
+    width: 700px;
+}
+
+.mat-card {
+    box-shadow: 0px 0px 10px 0px #9b9b9b,
+        0 1px 1px 0 #9b9b9b,
+        0 1px 3px 0 #9b9b9b !important;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    height: 260px; /* or any desired height */
+    width: 100%; /* Ensure the container takes full width */
+}
+
+.font-size-20{
+    font-size: 20px;
+}
+
+.p-20{
+    padding: 20px !important;
+}
+
+.w-full{
+    width: 100%;
+}
+

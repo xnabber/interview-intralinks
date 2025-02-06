@@ -1,0 +1,28 @@
+<div class="card-container">
+    <mat-card appearance="outlined" style="width: 70%;" class="mt-20 mat-card">
+        <mat-card-content class="p-20" style="justify-content: space-between; align-items: center; border-bottom: 1px solid #ccc;">
+            <div class="display-flex">
+                <span class="flex bold font-size-20">{{ isEditMode ? 'Edit Bookmark' : 'Create New Bookmark' }}</span>
+                <span class="flex justify-center gray">Type bookmark name and URL</span>
+                <span class="flex text-align-right">
+                    <button mat-flat-button color="warn" (click)="close()">Back</button>
+                </span>
+            </div>
+            <div class="display-flex mt-20">
+                <mat-form-field style="width: 30%">
+                    <mat-label>Name</mat-label>
+                    <input matInput placeholder="Enter bookmark name" [(ngModel)]="bookmark!.title">
+                </mat-form-field>
+                
+                <mat-form-field class="w-full ms-5">
+                    <mat-label>URL</mat-label>
+                    <input matInput placeholder="Enter bookmark URL" [(ngModel)]="bookmark!.url">
+                </mat-form-field>
+            </div>
+            
+        </mat-card-content>
+        <mat-card-actions class="p-20" style="display: flex; justify-content: flex-end; height: 100px;">
+            <button mat-flat-button color="primary" (click)="saveBookmark()">{{ isEditMode ? 'Save Changes' : 'Create Bookmark' }}</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

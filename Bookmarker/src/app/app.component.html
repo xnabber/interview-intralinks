@@ -1,0 +1,18 @@
+<app-toolbar 
+(addBookmark)="addBookmark()" 
+[isAddEditVisible]="isAddEditVisible">
+</app-toolbar>
+
+<app-bookmarks-grid 
+[bookmarks]="(bookmarks$ | async) ?? []"
+(emitBookmark)="editBookmark($event)" 
+(emitDelete)="openDialog($event)"
+*ngIf="!isAddEditVisible">
+</app-bookmarks-grid>
+
+<app-add-edit 
+  *ngIf="isAddEditVisible" 
+  [bookmark]="selectedBookmark"
+  (closeAddEdit)="toggleBookmark()"
+  (saveBookmarkEvent)="saveBookmark($event)">
+</app-add-edit>
