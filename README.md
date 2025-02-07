@@ -32,7 +32,7 @@ A web application built with Angular that allows users to manage their bookmarks
 - **UI Library**: Angular Material
 - **Backend Simulation**: JSON Server
 - **Validators**: Custom Angular validators for duplicate and HTTP URL checks
-- **Development Tools**: TypeScript, RxJS, Jasmine/Karma (for testing)
+- **Development Tools**: TypeScript, RxJS
 
 ---
 
@@ -51,7 +51,7 @@ Ensure you have the following installed on your machine:
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/your-repo/bookmarks.git
+   git clone https://github.com/xnabber/interview-intralinks/tree/develop
    cd bookmarks
    ```
 
