@@ -3,15 +3,19 @@
     <span class="flex bold">Bookmarker</span>
   
     <!-- Middle: Search Icon and Input -->
+     <div *ngIf="!isAddEditVisible">
+
+     
     <mat-icon class="mt-minus-5">search</mat-icon>
     <mat-form-field class="example-form-field mt-5">
-      <input matInput [(ngModel)]="value" class="search-input" placeholder="Filter bookmarks...">
+      <input matInput [(ngModel)]="value" (ngModelChange)="onValueChange($event)" class="search-input" placeholder="Filter bookmarks..." maxlength="80">
       @if (value) {
-        <button matSuffix mat-icon-button (click)="value=''">
+        <button matSuffix mat-icon-button (click)="value=''; onValueChange('')">
           <mat-icon class="white">close</mat-icon>
         </button>
       }
     </mat-form-field>
+  </div>
   
     <!-- Right: Plus Icon -->
     <span class="flex text-align-right">

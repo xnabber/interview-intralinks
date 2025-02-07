@@ -1,28 +1,47 @@
 <div class="card-container">
     <mat-card appearance="outlined" style="width: 70%;" class="mt-20 mat-card">
+      <form [formGroup]="bookmarkForm" (ngSubmit)="onSubmit()">
         <mat-card-content class="p-20" style="justify-content: space-between; align-items: center; border-bottom: 1px solid #ccc;">
-            <div class="display-flex">
-                <span class="flex bold font-size-20">{{ isEditMode ? 'Edit Bookmark' : 'Create New Bookmark' }}</span>
-                <span class="flex justify-center gray">Type bookmark name and URL</span>
-                <span class="flex text-align-right">
-                    <button mat-flat-button color="warn" (click)="close()">Back</button>
-                </span>
+          <div class="display-flex">
+            <span class="flex bold font-size-20">{{ isEditMode ? 'Edit Bookmark' : 'Create New Bookmark' }}</span>
+            <span class="flex justify-center gray">Type bookmark name and URL</span>
+            <span class="flex text-align-right">
+              <button mat-flat-button color="warn" (click)="close()">Back</button>
+            </span>
+          </div>
+          <div class="display-flex mt-20 w-full">
+            <div>
+              <!-- Bookmark Name Field -->
+              <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="Enter bookmark name" formControlName="title">
+                <mat-error *ngIf="bookmarkForm.get('title')?.invalid && (bookmarkForm.get('title')?.dirty || bookmarkForm.get('title')?.touched)">
+                  <span *ngIf="bookmarkForm.get('title')?.errors?.['required']">Name is required.</span>
+                  <span *ngIf="bookmarkForm.get('title')?.errors?.['minlength']">Name must be at least 3 characters long.</span>
+                  <span *ngIf="bookmarkForm.get('title')?.errors?.['maxlength']">Name cannot exceed 80 characters.</span>
+                  <span *ngIf="bookmarkForm.get('title')?.errors?.['duplicateTitle']">A bookmark with this name already exists.</span>
+                </mat-error>
+              </mat-form-field>
             </div>
-            <div class="display-flex mt-20">
-                <mat-form-field style="width: 30%">
-                    <mat-label>Name</mat-label>
-                    <input matInput placeholder="Enter bookmark name" [(ngModel)]="bookmark!.title">
-                </mat-form-field>
-                
-                <mat-form-field class="w-full ms-5">
-                    <mat-label>URL</mat-label>
-                    <input matInput placeholder="Enter bookmark URL" [(ngModel)]="bookmark!.url">
-                </mat-form-field>
+            <div class="ms-10 w-full">
+              <!-- Bookmark URL Field -->
+              <mat-form-field appearance="outline" class="w-full">
+                <mat-label>URL</mat-label>
+                <input matInput placeholder="Enter bookmark URL" formControlName="url">
+                <mat-error *ngIf="bookmarkForm.get('url')?.invalid && (bookmarkForm.get('url')?.dirty || bookmarkForm.get('url')?.touched)">
+                  <span *ngIf="bookmarkForm.get('url')?.errors?.['required']">URL is required.</span>
+                  <span *ngIf="bookmarkForm.get('url')?.errors?.['pattern']">Please enter a valid URL (e.g., https://example.com).</span>
+                  <span *ngIf="bookmarkForm.get('url')?.errors?.['duplicateUrl']">A bookmark with this URL already exists.</span>
+                </mat-error>
+              </mat-form-field>
             </div>
-            
+          </div>
         </mat-card-content>
-        <mat-card-actions class="p-20" style="display: flex; justify-content: flex-end; height: 100px;">
-            <button mat-flat-button color="primary" (click)="saveBookmark()">{{ isEditMode ? 'Save Changes' : 'Create Bookmark' }}</button>
+        <mat-card-actions class="display-flex flex-end p-20 mat-card-height">
+          <button mat-flat-button color="primary" type="submit" [disabled]="bookmarkForm.invalid">
+            {{ isEditMode ? 'Save Changes' : 'Create Bookmark' }}
+          </button>
         </mat-card-actions>
+      </form>
     </mat-card>
-</div>
+  </div>

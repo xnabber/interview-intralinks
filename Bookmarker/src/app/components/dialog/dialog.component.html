@@ -1,6 +1,6 @@
 <h2 mat-dialog-title>Hi</h2>
 <mat-dialog-content>
-  <p>Are you sure you want to delete bookmark : {{this.bookmark.title}}?</p>
+  <p>Are you sure you want to delete bookmark : <b>{{ bookmark.bookmark?.title }}</b> ?</p>
 </mat-dialog-content>
 <mat-dialog-actions>
   <button mat-button color="primary" (click)="onNoClick()">Cancel</button>

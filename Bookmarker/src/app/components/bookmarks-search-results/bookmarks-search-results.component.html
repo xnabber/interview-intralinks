@@ -1,0 +1,8 @@
+<h3 class="display-flex justify-center align-items-center mt-20 gray bold">
+    Results for "{{value}}"
+</h3>
+<app-bookmarks-grid 
+[bookmarks]="bookmarks"
+(emitBookmark)="editBookmark($event)" 
+(emitDelete)="deleteBookmark($event)">
+</app-bookmarks-grid>

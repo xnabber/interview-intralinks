@@ -1,4 +1,4 @@
-import { Bookmark } from './../../../../models/bookmark';
+import { Bookmark } from '../../models/bookmark';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({

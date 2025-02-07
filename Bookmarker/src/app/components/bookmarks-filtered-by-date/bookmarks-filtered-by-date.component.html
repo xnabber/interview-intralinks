@@ -1,0 +1,31 @@
+<div>
+    <!-- Today's Bookmarks -->
+    <div *ngIf="todayBookmarks.length > 0">
+      <h3 class="bold gray justify-center display-flex">Today</h3>
+      <app-bookmarks-grid 
+        [bookmarks]="todayBookmarks"
+        (emitBookmark)="editBookmark($event)" 
+        (emitDelete)="deleteBookmark($event)">
+      </app-bookmarks-grid>
+    </div>
+  
+    <!-- Yesterday's Bookmarks -->
+    <div *ngIf="yesterdayBookmarks.length > 0">
+      <h3 class="bold gray justify-center display-flex">Yesterday</h3>
+      <app-bookmarks-grid 
+        [bookmarks]="yesterdayBookmarks"
+        (emitBookmark)="editBookmark($event)" 
+        (emitDelete)="deleteBookmark($event)">
+      </app-bookmarks-grid>
+    </div>
+  
+    <!-- Older Bookmarks -->
+    <div *ngIf="olderBookmarks.length > 0">
+      <h3 class="bold gray justify-center display-flex">Older</h3>
+      <app-bookmarks-grid 
+        [bookmarks]="olderBookmarks"
+        (emitBookmark)="editBookmark($event)" 
+        (emitDelete)="deleteBookmark($event)">
+      </app-bookmarks-grid>
+    </div>
+  </div>

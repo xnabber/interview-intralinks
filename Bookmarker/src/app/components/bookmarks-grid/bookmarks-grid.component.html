@@ -1,18 +1,25 @@
 <!-- Check if bookmarks is not null and has items -->
 <ng-container *ngIf="bookmarks && bookmarks.length > 0; else noBookmarks">
-    <!-- Render bookmarks if they exist -->
+    <!-- Render bookmarks with expand functionality -->
     <app-bookmark
-      *ngFor="let bookmark of bookmarks"
+      *ngFor="let bookmark of visibleBookmarks"
       [bookmark]="bookmark"
       class="display-flex justify-center"
       (emitBookmark)="editBookmark($event)"
       (emitDelete)="openDialog($event)">
     </app-bookmark>
+
+    <!-- Expand button if there are more than 3 bookmarks -->
+     <div class="justify-center display-flex mt-20">
+        <button mat-flat-button color="primary" *ngIf="bookmarks.length > 3" (click)="toggleExpand()" class="expand-button ">
+            {{ isExpanded ? 'Show Less' : 'Show More' }}
+        </button>
+     </div>
 </ng-container>
 
 <!-- Fallback message if bookmarks is null or empty -->
 <ng-template #noBookmarks>
     <div class="centered-message">
-        <p>There are no bookmarks yet!</p>
+        <p>No bookmarks found!</p>
     </div>
 </ng-template>

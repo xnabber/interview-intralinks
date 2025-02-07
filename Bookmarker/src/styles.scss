@@ -91,6 +91,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     width: 700px;
 }
 
+.w-600{
+    width: 600px;
+}
+
 .mat-card {
     box-shadow: 0px 0px 10px 0px #9b9b9b,
         0 1px 1px 0 #9b9b9b,
@@ -116,3 +120,27 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     width: 100%;
 }
 
+.toolbar-fixed {
+    position: fixed; /* Fixes the toolbar to the top of the viewport */
+    top: 0;          /* Ensures it stays at the very top */
+    left: 0;         /* Aligns it to the left edge */
+    width: 100%;     /* Makes it span the full width of the viewport */
+    z-index: 1000;   /* Ensures it stays above other elements */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for better visibility */
+  }
+
+.mt-100{
+    margin-top: 100px;
+}
+
+.ms-10{
+    margin-left: 10px;
+}
+
+.flex-end{
+    justify-content: flex-end;
+}
+
+.mat-card-height{
+    height:67px;
+}

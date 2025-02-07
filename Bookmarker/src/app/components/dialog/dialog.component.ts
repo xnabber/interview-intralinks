@@ -1,6 +1,6 @@
 import { Component, inject, model } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { Bookmark } from '../../../../models/bookmark';
+import { Bookmark } from '../../models/bookmark';
 
 @Component({
   selector: 'app-dialog',
@@ -11,8 +11,7 @@ import { Bookmark } from '../../../../models/bookmark';
 })
 export class DialogComponent {
   readonly dialogRef = inject(MatDialogRef<DialogComponent>);
-  readonly bookmark = inject(MAT_DIALOG_DATA) as Bookmark;
-
+  readonly bookmark = inject(MAT_DIALOG_DATA) as { bookmark: Bookmark };
   onNoClick(): void {
     this.dialogRef.close();
   }
