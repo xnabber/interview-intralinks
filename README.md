@@ -109,5 +109,3 @@ We welcome contributions to improve this project! If you'd like to contribute, p
 For any questions or issues, feel free to open an issue in the repository.
 
 ---
-
-This `README.md` file provides a concise overview of your Angular project, emphasizing the importance of using the `develop` branch for setup and contributions. Let me know if you need further adjustments!
