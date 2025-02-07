@@ -92,7 +92,7 @@ Below are some screenshots showcasing the functionality of the application:
 
 | ![Photo 1](https://github.com/xnabber/interview-intralinks/blob/develop/Bookmarker/photos/photo1.png) | ![Photo 2](https://github.com/xnabber/interview-intralinks/blob/develop/Bookmarker/photos/photo2.png) | ![Photo 3](https://github.com/xnabber/interview-intralinks/blob/develop/Bookmarker/photos/photo3.png) |
 |-------------------------------|-------------------------------|-------------------------------|
-| **Bookmark List View**         | **Add/Edit Bookmark Form**    | **Search Results**            |
+| **Bookmark List View**        | **Search Results**            | **Add/Edit Bookmark Form**    |
 
 ---
 
