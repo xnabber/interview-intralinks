@@ -1,7 +1,3 @@
-Certainly! Below is the updated `README.md` file for your Angular project, excluding the project structure section and including a note about using the `develop` branch.
-
----
-
 # Bookmarks
 
 A web application built with Angular that allows users to manage their bookmarks efficiently. This app provides features like adding, editing, searching, and deleting bookmarks while ensuring data integrity through custom validators. The application uses NgRx for state management and Angular Material for a modern UI.
