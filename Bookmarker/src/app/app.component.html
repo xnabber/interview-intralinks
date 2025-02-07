@@ -1,18 +1,18 @@
 <app-toolbar 
-class="toolbar-fixed"
-(addBookmark)="addBookmarkMenu()" 
-[isAddEditVisible]="isAddEditVisible"
-[(value)]="value"
-(valueChange)="filterBookmarks()">
+  class="toolbar-fixed"
+  (addBookmark)="addBookmarkMenu()" 
+  [isAddEditVisible]="isAddEditVisible"
+  [(value)]="value"
+  (valueChange)="filterBookmarks()">
 </app-toolbar>
 
 <div class="mt-100">
   <app-bookmarks-search-results
-  [bookmarks]="(filteredBookmarks$ | async) ?? []"
-  (emitBookmark)="editBookmark($event)" 
-  (emitDelete)="openDialog($event)"
-  [value]="value"
-  *ngIf="!isAddEditVisible && value">
+    [bookmarks]="(filteredBookmarks$ | async) ?? []"
+    (emitBookmark)="editBookmark($event)" 
+    (emitDelete)="openDialog($event)"
+    [value]="value"
+    *ngIf="!isAddEditVisible && value">
   </app-bookmarks-search-results>
   
   <app-bookmarks-filtered-by-date
@@ -23,10 +23,10 @@ class="toolbar-fixed"
   </app-bookmarks-filtered-by-date>
   
   <app-add-edit 
-    *ngIf="isAddEditVisible" 
     [bookmark]="selectedBookmark"
     [existingBookmarks]="(bookmarks$ | async) ?? []"
     (closeAddEdit)="toggleBookmark()"
-    (saveBookmarkEvent)="saveBookmark($event)">
+    (saveBookmarkEvent)="saveBookmark($event)"
+    [@isVisible]="isAddEditVisible">
   </app-add-edit>
 </div>

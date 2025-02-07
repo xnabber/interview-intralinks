@@ -19,6 +19,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { ReactiveFormsModule } from '@angular/forms'; 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { BookmarkComponent } from './components/bookmark/bookmark.component';
@@ -59,6 +60,7 @@ import { BookmarksFilteredByDateComponent } from './components/bookmarks-filtere
     MatDialogModule,
     HttpClientModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
     StoreModule.forRoot<AppState>({
       bookmarks: bookmarksReducer
     }),

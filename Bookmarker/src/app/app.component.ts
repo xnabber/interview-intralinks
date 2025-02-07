@@ -7,12 +7,20 @@ import { AppState } from './state/app.state';
 import { addBookmark, deleteBookmark, searchBookmarks, updateBookmark } from './store/bookmark.actions';
 import { Bookmark } from './models/bookmark';
 import { DialogComponent } from './components/dialog/dialog.component';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   standalone: false,
   styleUrl: './app.component.scss',
+  animations:[
+    trigger("isVisible", [
+      state("true", style({ opacity: 1 })),
+      state("false", style({ opacity: 0 })),
+      transition('true <=> false', animate('0.5s')),
+    ])
+  ]
 })
 export class AppComponent implements OnInit {
   constructor(
